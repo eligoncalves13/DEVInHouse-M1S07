@@ -9,8 +9,7 @@ async function runFetch() {
         try {
             const request = await fetch(`https://dog.ceo/api/breeds/image/random`);
             const json = await request.json();
-            const result1 = json.message;
-            const section1 = `<section class="section1" style="background-image: url('${result1}')"></section>`;
+            const section1 = `<section class="section1" style="background-image: url('${json.message}')"></section>`;
             body.insertAdjacentHTML("beforeend", section1);
         } catch (error) {
             console.log('A requisição falhou!', error);
@@ -18,8 +17,7 @@ async function runFetch() {
         try {
             const request = await fetch(`https://api.thecatapi.com/v1/images/search`);
             const json = await request.json();
-            const result2 = json[0].url;
-            const section2 = `<section class="section2" style="background-image: url('${result2}')"></section>`;
+            const section2 = `<section class="section2" style="background-image: url('${json[0].url}')"></section>`;
             body.insertAdjacentHTML("beforeend", section2);
         } catch (error) {
             console.log('A requisição falhou!', error);

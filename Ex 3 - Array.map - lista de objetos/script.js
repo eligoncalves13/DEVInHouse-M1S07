@@ -6,8 +6,8 @@ const list = [
     { id: 5, cliente: 'Claudia Cipriano', idade: 22 }
 ];
 
-const newList = list.map(objeto => {
-    return {...objeto, ativo: true}
+const newList = list.map(object => {
+    return {...object, ativo: true};
 });
 
 console.log(newList);

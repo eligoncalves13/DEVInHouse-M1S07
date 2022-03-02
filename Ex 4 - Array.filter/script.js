@@ -6,5 +6,5 @@ const list = [
     { id: 5, cliente: 'Claudia Cipriano', idade: 22, ativo: true }
 ];
 
-const over25YearsAge = list.filter(clients => clients.idade > 25);
-console.log(over25YearsAge);
+const over25YearsOld = list.filter(clients => clients.idade > 25);
+console.log(over25YearsOld);

@@ -1,32 +1,31 @@
 const range = document.querySelector('#range'),
-    progressbar = document.querySelector('.progress-bar'),
-    span = document.querySelector('span')
+    progressBar = document.querySelector('.progress-bar'),
+    span = document.querySelector('span');
 
 let progress = 0;
 
-range.addEventListener('input', function() {
+range.addEventListener('input', () => {
     const value = range.value;
-    progressbar.style.setProperty('--progress', value);
+    progressBar.style.setProperty('--progress', value);
 })
 
 let interval = setInterval(() => {
     range.disabled = true;
     progress++;
-    progressbar.style.setProperty('--progress', progress);
+    progressBar.style.setProperty('--progress', progress);
 
     percentageProgress(progress);
     stopProgress(progress);
-
 }, 100)
 
-function stopProgress(progress) {
+const stopProgress = (progress) => {
     if (progress === 100) {
         interval = window.clearInterval(interval);
-        window.alert('Concluída');
+        window.alert('Concluído!');
     }
 }
 
-function percentageProgress(progress) {
+const percentageProgress = (progress) => {
     let percentage = progress + '%';
     span.innerHTML = percentage;
 }
